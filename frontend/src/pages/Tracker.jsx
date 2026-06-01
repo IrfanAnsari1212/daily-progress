@@ -8,7 +8,7 @@ import api from "../services/api";
 import { scoreBadge } from "../utils/progress";
 
 const sections = [
-  ["DSA practice", [["dsa1", "Problem 1"], ["dsa2", "Problem 2"], ["dsa3", "Problem 3"]]],
+  ["DSA practice", [["dsa1", "Problem 1"], ["dsa2", "Problem 2"], ["dsa3", "Problem 3"],["dsa4", "Problem 4"],["dsa5", "Problem 5"]]],
   ["Build & learn", [["learning", "Topic completed"], ["project", "Feature built"], ["github", "Code pushed"]]],
   ["Interview prep", [["os", "OS studied"], ["dbms", "DBMS studied"], ["cn", "CN studied"]]],
   ["Career & health", [["jobs", "Applied to jobs"], ["exercise", "Exercise"], ["sleep", "Sleep 7+ hours"]]],
@@ -19,7 +19,7 @@ const initial = {
   taskOfDay: "",
   taskOfDayCompleted: false
 };
-const getScore = (v) => ["dsa1","dsa2","dsa3","learning","project","github","jobs","exercise","sleep"].filter((k) => v[k]).length + Number(v.os || v.dbms || v.cn);
+const getScore = (v) => ["dsa1","dsa2","dsa3","dsa4","dsa5","learning","project","github","jobs","exercise","sleep"].filter((k) => v[k]).length + Number(v.os || v.dbms || v.cn);
 
 export default function Tracker() {
   const { data, loading } = useApi("/progress", { records: [] });
