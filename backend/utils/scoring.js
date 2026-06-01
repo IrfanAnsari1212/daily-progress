@@ -1,5 +1,5 @@
 export const TRACKER_FIELDS = [
-  "dsa1", "dsa2", "dsa3", "learning", "project", "github", "os", "dbms",
+  "dsa1", "dsa2", "dsa3", "dsa4", "dsa5", "dsa6", "learning", "project", "github", "os", "dbms",
   "cn", "jobs", "exercise", "sleep", "wakeRule", "sleepRule", "youtubeRule", "courseRule"
 ];
 

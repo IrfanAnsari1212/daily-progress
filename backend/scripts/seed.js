@@ -19,7 +19,8 @@ const records = Array.from({ length: 28 }, (_, index) => {
   const date = new Date();
   date.setUTCDate(date.getUTCDate() - (27 - index));
   const values = {
-    dsa1: true, dsa2: index % 3 !== 0, dsa3: index % 4 !== 0, learning: index % 5 !== 0,
+    dsa1: true, dsa2: index % 3 !== 0, dsa3: index % 4 !== 0, dsa4: index % 2 === 0,
+    dsa5: index % 3 === 0, dsa6: index % 4 === 0, learning: index % 5 !== 0,
     project: index % 3 !== 0, github: index % 2 === 0, os: index % 4 === 0, dbms: index % 4 === 1,
     cn: index % 4 === 2, jobs: index % 3 === 0, exercise: index % 2 === 0, sleep: index % 5 !== 0,
     wakeRule: true, sleepRule: index % 3 !== 0, youtubeRule: true, courseRule: true

@@ -8,7 +8,8 @@ export const analytics = asyncHandler(async (req, res) => {
   const daily = records.map((record) => ({
     date: record.date.toISOString().slice(0, 10),
     score: record.score,
-    dsa: Number(record.dsa1) + Number(record.dsa2) + Number(record.dsa3),
+    dsa: Number(record.dsa1) + Number(record.dsa2) + Number(record.dsa3)
+      + Number(record.dsa4) + Number(record.dsa5) + Number(record.dsa6),
     jobs: Number(record.jobs),
     streak: record.score >= 8 ? 1 : 0
   }));

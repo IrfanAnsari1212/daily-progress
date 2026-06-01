@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 
 const booleanFields = {
-  dsa1: Boolean, dsa2: Boolean, dsa3: Boolean, learning: Boolean, project: Boolean,
+  dsa1: Boolean, dsa2: Boolean, dsa3: Boolean, dsa4: Boolean, dsa5: Boolean, dsa6: Boolean,
+  learning: Boolean, project: Boolean,
   github: Boolean, os: Boolean, dbms: Boolean, cn: Boolean, jobs: Boolean,
   exercise: Boolean, sleep: Boolean, wakeRule: Boolean, sleepRule: Boolean,
   youtubeRule: Boolean, courseRule: Boolean

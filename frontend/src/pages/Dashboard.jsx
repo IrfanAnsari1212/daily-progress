@@ -16,7 +16,7 @@ export default function Dashboard() {
   const todayKey = new Date().toISOString().slice(0, 10);
   const today = data.records.find((record) => record.date.slice(0, 10) === todayKey) || { score: 0 };
   const recent = [...data.records].reverse().slice(-7);
-  const dsa = recent.reduce((total, day) => total + Number(day.dsa1) + Number(day.dsa2) + Number(day.dsa3), 0);
+  const dsa = recent.reduce((total, day) => total + Number(day.dsa1) + Number(day.dsa2) + Number(day.dsa3) + Number(day.dsa4) + Number(day.dsa5) + Number(day.dsa6), 0);
   const jobs = recent.reduce((total, day) => total + Number(day.jobs), 0);
   if (loading) return <Loading />;
   return <>
