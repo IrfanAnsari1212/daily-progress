@@ -10,7 +10,7 @@ import goalRoutes from "./routes/goalRoutes.js";
 import progressRoutes from "./routes/progressRoutes.js";
 import resumeRoutes from "./routes/resumeRoutes.js";
 
-const app = express();
+export const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL?.split(",") || true }));
 app.use(express.json());
 app.use(morgan("dev"));
@@ -30,9 +30,11 @@ app.use((err, _req, res, _next) => {
 });
 
 const port = process.env.PORT || 5000;
-connectDB()
-  .then(() => app.listen(port, () => console.log(`ProgressForge API listening on ${port}`)))
-  .catch((error) => {
-    console.error(`Failed to start API: ${error.message}`);
-    process.exit(1);
-  });
+if (!process.env.VERCEL) {
+  connectDB()
+    .then(() => app.listen(port, () => console.log(`ProgressForge API listening on ${port}`)))
+    .catch((error) => {
+      console.error(`Failed to start API: ${error.message}`);
+      process.exit(1);
+    });
+}
