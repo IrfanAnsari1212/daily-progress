@@ -11,6 +11,8 @@ const dailyProgressSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true, index: true },
   date: { type: Date, required: true },
   ...booleanFields,
+  taskOfDay: { type: String, trim: true, maxlength: 160, default: "" },
+  taskOfDayCompleted: { type: Boolean, default: false },
   score: { type: Number, default: 0, min: 0, max: 10 }
 }, { timestamps: true });
 

@@ -1,4 +1,4 @@
-import { Activity, BriefcaseBusiness, CheckCircle2, Flame, Github, Target } from "lucide-react";
+import { Activity, BriefcaseBusiness, CheckCircle2, ClipboardList, Flame, Github, Target } from "lucide-react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CalendarHeatmap from "../components/CalendarHeatmap";
@@ -29,6 +29,7 @@ export default function Dashboard() {
       <StatCard icon={Target} label="Longest streak" value={`${data.streak.longestStreak || 0} days`} detail="Your personal best" tone="violet" />
       <StatCard icon={CheckCircle2} label="Weekly progress" value={`${Math.round(recent.reduce((sum, day) => sum + day.score, 0) / 70 * 100) || 0}%`} detail="Across the last 7 days" tone="sky" />
     </div>
+    {today.taskOfDay && <section className="panel mt-4 flex items-center gap-3 p-4"><span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${today.taskOfDayCompleted ? "bg-emerald-400/15 text-emerald-400" : "bg-violet-400/15 text-violet-300"}`}><ClipboardList size={18}/></span><div><p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Task of the day</p><p className={`mt-1 text-sm font-semibold ${today.taskOfDayCompleted ? "text-emerald-300 line-through" : "text-white"}`}>{today.taskOfDay}</p></div></section>}
     <div className="mt-4 grid gap-4 xl:grid-cols-[1.45fr_.8fr]">
       <section className="panel p-5"><div className="mb-4"><h2 className="font-bold text-white">Momentum trend</h2><p className="text-xs text-slate-500">Daily scores for the last seven entries</p></div><ScoreChart data={recent} /></section>
       <section className="panel flex items-center justify-around gap-3 p-5"><ProgressRing score={today.score} /><div><p className="text-sm font-bold text-white">Today's forge</p><p className="mt-1 max-w-32 text-xs leading-5 text-slate-500">Complete your essential habits to hit the green zone.</p></div></section>
